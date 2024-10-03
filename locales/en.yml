@@ -1,0 +1,18 @@
+instructions:
+  grid: '{keys} to highlight the next syllable'
+  sheet: '{keys} to generate new words'
+not-found: Not found
+pages:
+  grid:
+    generate: New syllables
+    title: Syllables
+  home:
+    title: Home
+  index:
+    heading: Reading exercises
+    subheading: for first-time readers
+  settings:
+    graphemes: Active letters or letter combinations
+    title: Settings
+  sheet:
+    title: Words

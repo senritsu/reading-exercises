@@ -1,0 +1,18 @@
+instructions:
+  grid: '{keys} um die nächste Silbe zu markieren'
+  sheet: '{keys} um neue Wörter zu erzeugen'
+not-found: Nicht gefunden
+pages:
+  grid:
+    generate: Neue Silben
+    title: Silben
+  home:
+    title: Startseite
+  index:
+    heading: Leseübungen
+    subheading: für Erstleser
+  settings:
+    graphemes: Aktive Buchstaben oder Buchstabenkombinationen
+    title: Einstellungen
+  sheet:
+    title: Wörter
