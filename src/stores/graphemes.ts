@@ -1,19 +1,26 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
+const byType = {
+  vowels: parseGraphemeString('aeiou<au><eu><ei>äöü'),
+  consonants: parseGraphemeString('<sch>jgbdwslm<ch>rkptfzhnyxvc<qu><sp><st>'),
+}
+
+const byLevel = {
+  1: parseGraphemeString('loamist'),
+  2: parseGraphemeString('endupk'),
+  3: parseGraphemeString('bf<ei>rhw'),
+  4: parseGraphemeString('g<au><sch><ie><z><eu><ch>'),
+  5: parseGraphemeString('<sp><st>äöü<ng><äu>vj'),
+  6: parseGraphemeString('<nk>ßxyc<ck><qu>'),
+}
+
+const allTypes = Object.values(byType).flat()
+const allLevels = Object.values(byLevel).flat()
+
 export const useGraphemesStore = defineStore('graphemes', () => {
   const allGraphemes = readonly(reactive({
-    byType: {
-      vowels: parseGraphemeString('aeiou<au><eu><ei>äöü'),
-      consonants: parseGraphemeString('<sch>jgbdwslm<ch>rkptfzhnyxvc<qu><sp><st>'),
-    },
-    byLevel: {
-      1: parseGraphemeString('loamist'),
-      2: parseGraphemeString('endupk'),
-      3: parseGraphemeString('bf<ei>rhw'),
-      4: parseGraphemeString('g<au><sch><ie><z><eu><ch>'),
-      5: parseGraphemeString('<sp><st>äöü<ng><äu>vj'),
-      6: parseGraphemeString('<nk>ßxyc<ck><qu>'),
-    },
+    byType,
+    byLevel,
   }))
 
   const graphemeSettings = ref<Record<string, boolean>>({
@@ -23,7 +30,7 @@ export const useGraphemesStore = defineStore('graphemes', () => {
     m: true,
   })
 
-  for (const grapheme of allGraphemes.byType.vowels.concat(allGraphemes.byType.consonants).concat(allGraphemes.byLevel[1]).concat(allGraphemes.byLevel[2]).concat(allGraphemes.byLevel[3]).concat(allGraphemes.byLevel[4]).concat(allGraphemes.byLevel[5]).concat(allGraphemes.byLevel[6])) {
+  for (const grapheme of allTypes.concat(allLevels)) {
     if (graphemeSettings.value[grapheme] === undefined) {
       graphemeSettings.value[grapheme] = false
     }

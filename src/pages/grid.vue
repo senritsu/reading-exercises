@@ -31,11 +31,11 @@ onKeyStroke(' ', next)
       </i18n-t>
     </template>
 
-    <div class="grid mx-auto border border-[grey]">
+    <div class="font-grund grid mx-auto border border-[grey]">
       <span v-for="(syllable, i) in syllables" :key="i" class="flex items-center justify-center border border-[grey] text-[3.5vw]" :class="[activeIndex === i && 'border-[lightskyblue] bg-sky-600']">{{ syllable }}</span>
     </div>
     <div>
-      <button class="focus:ring-gray-500; border border-gray-600 rounded-md bg-gray-800 px-4 py-2 text-white active:bg-gray-900 hover:bg-gray-700 focus:outline-none focus:ring-2" @click.stop="generate">
+      <button class="btn" @click.stop="generate">
         {{ t('pages.grid.generate') }}
       </button>
     </div>

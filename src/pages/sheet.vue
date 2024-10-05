@@ -15,8 +15,8 @@ function generate() {
     generateLine(6, 'cv||vc'),
     generateLine(6, 'cvc||vcv'),
     generateLine(6, 'cv||cvc'),
-    generateLine(5, 'cv-cv||vc-vc'),
-    generateLine(5, 'cv-cv-c||vc-vc-v'),
+    generateLine(5, 'cv-cv||v-cvc'),
+    generateLine(5, 'cv-cvc||v-cv-cv'),
   ]
 }
 
@@ -35,14 +35,14 @@ onKeyStroke(' ', generate)
       </i18n-t>
     </template>
 
-    <div class="mx-auto my-6 w-[80vw] flex flex-col">
+    <div class="font-grund mx-auto my-6 w-[80vw] flex flex-col">
       <div v-for="(line, lineIndex) of lines" :key="line.join('')">
         <div class="flex justify-between text-xl">
           <div v-for="(word, i) in line" :key="i" class="word text-[4vw]">
             <span v-for="(syllable, j) in word" :key="j">{{ syllable }}</span>
           </div>
         </div>
-        <hr v-if="lineIndex < lines.length - 1" class="my-[2vw] border-dark">
+        <hr v-if="lineIndex < lines.length - 1" class="my-[2vw] border-gray-700">
       </div>
     </div>
   </ExerciseLayout>

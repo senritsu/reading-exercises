@@ -24,7 +24,8 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         // sans: 'DM Sans',
-        sans: 'PT Sans',
+        sans: 'Inter',
+        grund: 'Playwrite DE Grund',
         serif: 'DM Serif Display',
         mono: 'DM Mono',
       },
